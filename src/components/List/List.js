@@ -39,12 +39,15 @@ function List() {
   return (
     <>
       {items.map((item, index) => {
-        <li>
-          <h2>{item.name}</h2>
-          <p>{item.description}</p>
-          <p>{item.price}</p>
-          <p>{item.maxBuy}</p>
-        </li>;
+        return (
+          <li>
+            <img src={item.img} />
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
+            <p>{item.price}</p>
+            <p>{item.maxBuy}</p>
+          </li>
+        );
       })}
     </>
   );
