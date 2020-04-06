@@ -36,9 +36,13 @@ const items = [
   },
 ];
 
+function getNewBasketState(name, maxBuy, price, basket) {
+  return [...basket, { name, maxBuy, price }];
+}
+
 function List({ itemQuantity, setItemQuantity, basket, setBasket }) {
   function handleBasketClick(name, maxBuy, price) {
-    setBasket([...basket, { name, maxBuy, price }]);
+    setBasket(getNewBasketState);
   }
   console.log(basket, "basket");
 
@@ -75,3 +79,6 @@ function List({ itemQuantity, setItemQuantity, basket, setBasket }) {
 }
 
 export default List;
+module.exports = {
+  getNewBasketState,
+};
