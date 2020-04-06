@@ -1,4 +1,5 @@
 import React from "react";
+import "./List.css";
 
 const items = [
   {
@@ -48,7 +49,8 @@ function List({ itemQuantity, setItemQuantity, basket, setBasket }) {
     <>
       {items.map((item, index) => {
         return (
-          <li key={index}>
+
+          <li className="listItemContainer">
             <img src={item.img} />
             <h2>{item.name}</h2>
             <p>{item.description}</p>
@@ -64,6 +66,7 @@ function List({ itemQuantity, setItemQuantity, basket, setBasket }) {
             >
               Add to Basket
             </button>
+
           </li>
         );
       })}

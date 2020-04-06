@@ -1,0 +1,50 @@
+img {
+  height: 100px;
+  align-self: center;
+  justify-self: center;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.listItemContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr;
+  grid-gap: 2px;
+  border: solid 3px black;
+
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  width: 50vw;
+  list-style: none;
+  text-align: left;
+}
+
+.max {
+  font-style: italic;
+  color: grey;
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.item-name {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.price {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.descrip {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.basketButton {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: center;
+}
