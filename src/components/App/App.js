@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import List from "../List/List";
 
 //display all items
 //add to basket button next to each item
@@ -10,7 +11,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>TEST</h1>
+      <h1>SHOPPING</h1>
+      <ul>
+        <List />
+      </ul>
     </div>
   );
 }
