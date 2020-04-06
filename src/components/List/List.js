@@ -1,4 +1,5 @@
 import React from "react";
+import "./List.css";
 
 const items = [
   {
@@ -40,12 +41,12 @@ function List() {
     <>
       {items.map((item, index) => {
         return (
-          <li>
-            <img src={item.img} />
-            <h2>{item.name}</h2>
-            <p>{item.description}</p>
-            <p>{item.price}</p>
-            <p>{item.maxBuy}</p>
+          <li className="listItemContainer">
+            <img src={item.img} className="picture" />
+            <h2 className="item-name">{item.name}</h2>
+            <p className="descrip">{item.description}</p>
+            <p className="price">£{item.price}</p>
+            <p className="max">max:{item.maxBuy}</p>
           </li>
         );
       })}

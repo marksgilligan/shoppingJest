@@ -11,7 +11,7 @@ import List from "../List/List";
 function App() {
   return (
     <div className="App">
-      <h1>SHOPPING</h1>
+      <h1>Welcome to SoCmart</h1>
       <ul>
         <List />
       </ul>
