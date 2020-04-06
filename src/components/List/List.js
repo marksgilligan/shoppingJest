@@ -40,16 +40,17 @@ function List({ itemQuantity, setItemQuantity, basket, setBasket }) {
   function handleBasketClick(name, maxBuy, price) {
     setBasket([...basket, { name, maxBuy, price }]);
   }
-  console.log(basket);
+  console.log(basket, "basket");
+
   function handleIncreaseQty(name) {
-    console.log((itemQuantity[name] = itemQuantity[name] + 1));
-    setItemQuantity((itemQuantity.name = itemQuantity.name + 1));
+    setItemQuantity({ ...itemQuantity, [name]: itemQuantity[name] + 1 });
   }
+  console.log(itemQuantity, "3");
+
   return (
     <>
       {items.map((item, index) => {
         return (
-
           <li className="listItemContainer">
             <img src={item.img} />
             <h2>{item.name}</h2>
@@ -66,7 +67,6 @@ function List({ itemQuantity, setItemQuantity, basket, setBasket }) {
             >
               Add to Basket
             </button>
-
           </li>
         );
       })}
