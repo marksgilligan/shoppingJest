@@ -36,17 +36,37 @@ const items = [
   },
 ];
 
-function List() {
+function List({ itemQuantity, setItemQuantity, basket, setBasket }) {
+  function handleBasketClick(name, maxBuy, price) {
+    setBasket([...basket, { name, maxBuy, price }]);
+  }
+  console.log(basket);
+  function handleIncreaseQty(name) {
+    console.log((itemQuantity[name] = itemQuantity[name] + 1));
+    setItemQuantity((itemQuantity.name = itemQuantity.name + 1));
+  }
   return (
     <>
       {items.map((item, index) => {
         return (
+
           <li className="listItemContainer">
-            <img src={item.img} className="picture" />
-            <h2 className="item-name">{item.name}</h2>
-            <p className="descrip">{item.description}</p>
-            <p className="price">£{item.price}</p>
-            <p className="max">max:{item.maxBuy}</p>
+            <img src={item.img} />
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
+            <p>{item.price}</p>
+            <p>{item.maxBuy}</p>
+            <p>Quantity: {itemQuantity[item.name]}</p>
+            <button onClick={() => handleIncreaseQty(item.name)}>+</button>
+            <button
+              className="basketButton"
+              onClick={() =>
+                handleBasketClick(item.name, item.maxBuy, item.price, index)
+              }
+            >
+              Add to Basket
+            </button>
+
           </li>
         );
       })}
